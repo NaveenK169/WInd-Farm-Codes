@@ -4,9 +4,10 @@ import math as mt
 ####---finding f(x) ------#######
 ####see eq - (6); kethavth et.al (POF - 2022)
 ##--for your kind information the below both ways gives correct f(x) but the error between both ways is below L2_norm =6%, RMS=1.8 ------- 
+##--moslty use the first way of calculation
 
-####---the way Niranjan sir calculated --------#######################################################
-def cal_eq6_naveenpof2022_niranjan(vel_he,vel_hnt,uhubhnt_1d,y,dy,ny,z,dz,nz,yturb,zturb,turb_diam,radial_factor):
+####--- first way calculated --------#######################################################
+def cal_eq6_naveenpof2022_niranjan_naveen(vel_he,vel_hnt,uhubhnt_1d,y,dy,ny,z,dz,nz,yturb,zturb,turb_diam,radial_factor):
     normfac = uhubhnt_1d**2
     # Initialize mask_radial with zeros of the same shape as u
     mask_radial = np.zeros_like(vel_he)
@@ -29,7 +30,7 @@ def cal_eq6_naveenpof2022_niranjan(vel_he,vel_hnt,uhubhnt_1d,y,dy,ny,z,dz,nz,ytu
     return left_term, right_term, Fcorr
 
 
-####---The way Naveen Calculated ----#############################################################
+####---Second way ----#############################################################
 ################################################################################################################
 #mask function for each turbine (finding radial distance)
 def masking(arr,radius,xcenter,ycenter,dimarr1,dimarr2):    #dimaar1 = x and dimaar2 = y
